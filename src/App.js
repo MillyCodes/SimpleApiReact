@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-// import List from "./List";
+import List from "./List";
 import axios from "axios";
 
 class App extends Component {
@@ -14,16 +14,10 @@ class App extends Component {
     }
 
     getPeople() {
-        return axios
-            .get("http://swapi.co/api/people", {
-                headers: {
-                    "Access-Control-Allow-Origin": "*"
-                }
-            })
-            .then(response => {
-                console.log(response.data.results);
-                this.setState({ people: response.data.results });
-            });
+        return axios.get("http://swapi.co/api/people").then(response => {
+            console.log(response.data.results);
+            this.setState({ people: response.data.results });
+        });
     }
 
     componentDidMount() {
@@ -31,8 +25,12 @@ class App extends Component {
     }
 
     render() {
-        // const { people } = this.state;
-        return <div className="App">{/* <List people={people} /> */}</div>;
+        const { people } = this.state;
+        return (
+            <div className="App">
+                <List people={people} />>
+            </div>
+        );
     }
 }
 
