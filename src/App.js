@@ -1,41 +1,32 @@
 import React, { Component } from "react";
 import List from "./List";
-import axios from "axios";
 
 class App extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            people: []
+            people: [],
+            isLoaded: false
         };
-
-        this.getPeople = this.getPeople.bind(this);
-    }
-
-    getPeople() {
-        return axios
-            .get("http://swapi.co/api/people", {
-                headers: {
-                    "Access-Control-Allow-Origin": "*",
-                    "Content-Type": "application/json"
-                }
-            })
-            .then(response => {
-                console.log(response.data.results);
-                this.setState({ people: response.data.results });
-            });
     }
 
     componentDidMount() {
-        this.getPeople();
+        fetch("https://jsonplaceholder.typicode.com/users")
+            .then(res => res.json())
+            .then(json => {
+                this.setState({
+                    isLoaded: true,
+                    people: json
+                });
+            });
     }
 
     render() {
         const { people } = this.state;
         return (
             <div className="App">
-                <List people={people} />>
+                <List people={people} />
             </div>
         );
     }

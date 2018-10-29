@@ -34,13 +34,13 @@ class CharInfo extends Component {
                 </p>
                 <ul>
                     <li>
-                        <h3>Username: {info.username}</h3>
+                        <h4>Username: {info.username}</h4>
                     </li>
                     <li>
-                        <h3>E-mail: {info.email}</h3>
+                        <h4>E-mail: {info.email}</h4>
                     </li>
                     <li>
-                        <h2>Phone: {info.phone}</h2>
+                        <h4>Phone: {info.phone}</h4>
                     </li>
                 </ul>
             </div>
