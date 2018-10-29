@@ -11,7 +11,7 @@ class List extends Component {
                     console.log(p);
                     return (
                         <div key={p.id}>
-                            <h2 className="char-name">{p.name}</h2>
+                            <h3 className="char-name">{p.name}</h3>
                             <CharInfo charInfo={p} />
                         </div>
                     );
