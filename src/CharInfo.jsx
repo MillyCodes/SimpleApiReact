@@ -21,7 +21,7 @@ class CharInfo extends Component {
         const info = this.props.charInfo;
         if (!this.state.expanded) {
             return (
-                <p className="btn btn-info" onCLick={this.open}>
+                <p className="btn btn-info" onClick={this.open}>
                     Show info
                 </p>
             );
@@ -29,16 +29,18 @@ class CharInfo extends Component {
 
         return (
             <div>
-                <p onCLick={this.close}>Hide Info</p>
+                <p className="btn btn-warning" onClick={this.close}>
+                    Hide Info
+                </p>
                 <ul>
                     <li>
-                        <h2>Gender: {info.gender}</h2>
+                        <h2>Username: {info.username}</h2>
                     </li>
                     <li>
-                        <h2>Birth Date: {info.birth_year}</h2>
+                        <h2>E-mail: {info.email}</h2>
                     </li>
                     <li>
-                        <h2>Hair Color: {info.hair_color}</h2>
+                        <h2>Phone: {info.phone}</h2>
                     </li>
                 </ul>
             </div>
