@@ -9,3 +9,4 @@ This project has been built to use React to make external api calls and display 
 -   React Create React App.
 -   CSS with Bootstrap
 -   API from [JSON Placeholder](https://jsonplaceholder.typicode.com/)
+-   Originally tried using SWAPI but seemed to have some error, will be looking into this next.
